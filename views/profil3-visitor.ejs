@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/style/nav.css">
+    <link rel="stylesheet" href="/style/profil3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <input type="hidden" id="username-hidden" value="<%= user.username %>">
+
+    <nav>
+        <div class="left">
+
+            <div class="logo">
+                <img src="/image/fb.jpg">
+            </div>
+
+            <div class="search_bar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+
+            </div>
+
+        </div>
+
+        <div class="center">
+            <a href="/posts">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+
+        <div class="right">
+            <a href="/user/logout">
+                <button class="logout">Log Out</button>
+            </a>
+        </div>
+
+    </nav>
+    <!--main-->
+    <!--bagian atas profil-->
+    <div class="main1">
+        <div id="block"></div>
+        <div id="block2">
+            <div class="profil">
+                <!-- LINK HREF 5 -->
+                <label>
+                    <img id="profil_image-visitor" src="<%= user.profile %>" alt="">
+                </label>
+            </div>
+            <div class="block2_1">
+                <h1><%= user.username %> </h1>
+                <p id="profile-friend-count">jumlah teman</p>
+                <div id="friend-profile">
+                    <!-- <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt=""> -->
+                </div>
+            </div>
+            <div id="edit">
+                <!-- BUTTON BERDASARKAN STATUS -->
+            </div>
+        </div>
+        <div class="block3">
+            <!-- LINK HREF 5 -->
+            <a href="/profile/userpost/<%= user.username %>">Post</a>
+            <!-- LINK HREF 6 -->
+            <a href="/profile/userprofile/<%= user.username %>">Profile</a>
+            <!-- LINK HREF 7 -->
+            <a href="/profile/userfriend/<%= user.username %>" class="on">Friend</a>
+
+        </div>
+    </div>
+    <!--bagian bawah main-->
+    <div id="main">
+
+        <div id="friend_list">
+            
+            <!-- <div class="item">
+                <img src="/image/profile_2.jpg" alt="">
+                <div class="text">
+                    <h2>nama</h2>
+                    <p>jumlah teman</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/image/profile_2.jpg" alt="">
+                <div class="text">
+                    <h2>nama</h2>
+                    <p>jumlah teman</p>
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/profil3-visitor.js"></script>
+    <script src="/js/load-profile-data.js"></script>
+    <script src="/js/search-redirect.js"></script>
+</body>
+</html>

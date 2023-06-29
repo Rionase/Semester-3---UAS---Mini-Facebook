@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/style/nav.css">
+    <link rel="stylesheet" href="/style/profil-edit.css">
+    <link rel="stylesheet" href="/style/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <input type="hidden" id="username-hidden" value="<%= user.username %>">
+    <nav>
+        <div class="left">
+            <!-- LINK HREF 1 -->
+            <div class="logo">
+                <img src="/image/fb.jpg">
+            </div>
+            <!-- LINK HREF 2 -->
+            <div class="search_bar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+
+            </div>
+
+        </div>
+        <!-- LINK HREF 3 -->
+        <div class="center">
+            <a href="/posts">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+        <!-- LINK HREF 4 -->
+        <a class="right" href="/user/logout">
+            <button class="logout" type="button">Log Out</button>
+        </a>
+
+    </nav>
+    <!--main-->
+    <!--bagian atas profil-->
+    <div class="main1">
+        <div id="block"></div>
+        <div id="block2">
+            <div class="profil">
+                <!-- LINK HREF 5 -->
+                <label>
+                    <img id="profil_image" src="<%= user.profile %>" alt="">
+                    <input id="input_gambar" type="file" accept="image/*" multiple />
+                </label>
+                <div class="edit">
+                    <i class="fa-solid fa-pen fa-3x"></i>
+                </div>
+            </div>
+            <div class="block2_1">
+                <h1><%= user.username %> </h1>
+                <p id="profile-friend-count">jumlah teman</p>
+                <div id="friend-profile">
+                    <!-- <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt="">
+                    <img src="/image/profile_1.jpg" alt=""> -->
+                </div>
+            </div>
+            <div id="edit">
+                
+            </div>
+        </div>
+        <div class="block3">
+            <!-- LINK HREF 5 -->
+            <a href="/profile/userpost/<%= user.username %>">Post</a>
+            <!-- LINK HREF 6 -->
+            <a href="/profile/userprofile/<%= user.username %>" class="on">Profile</a>
+            <!-- LINK HREF 7 -->
+            <a href="/profile/userfriend/<%= user.username %>">Friend</a>
+            
+        </div>
+    </div>
+    <div id="main">
+        <div class="testbox">
+            <form >
+                <p id="titel">User Profile</p>
+                <div class="item">
+                    <label for="name">Name<span></span></label>
+                    <input id="name" type="text" name="name" value="<%= user.name %>" />
+                </div>
+                <div class="item">
+                    <label for="city">City</label>
+                    <input id="city" type="text" name="city" value="<%= user.city %>" />
+                </div>
+                <div class="item">
+                    <label for="phone">Phone</label>
+                    <input id="phone" type="text" name="phone" value="<%= user.phone %>" />
+                </div>
+                <!-- <div class="item">
+                    <label for="bdate">Date of Birth</label>
+                    <input id="bdate" type="date" name="bdate" value="" />
+                    <i class="fas fa-calendar-alt"></i>
+                </div> -->
+                <div class="question">
+                    <label>Gender</label>
+                    <div class="question-answer">
+
+                        <% if (user.gender == "Male") { %>
+                                <div>
+                                    <input type="radio" id="radio_1" name="gender" checked />
+                                    <label for="radio_1" class="radio"><span>Male</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio_2" name="gender" />
+                                    <label for="radio_2" class="radio"><span>Female</span></label>
+                                </div>
+
+                            <% } else if (user.gender == "Female") { %>
+                                <div>
+                                    <input type="radio" id="radio_1" name="gender" />
+                                    <label for="radio_1" class="radio"><span>Male</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio_2" name="gender" checked />
+                                    <label for="radio_2" class="radio"><span>Female</span></label>
+                                </div>
+
+                            <% } else if (user.gender == null) { %>
+                                <div>
+                                    <input type="radio" id="radio_1" name="gender" />
+                                    <label for="radio_1" class="radio"><span>Male</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio_2" name="gender" />
+                                    <label for="radio_2" class="radio"><span>Female</span></label>
+                                </div>
+
+                        <% } %>
+                    </div>
+                </div>
+                <div class="question">
+                    <label>Relationship Status</label>
+                    <div class="question-answer">
+                        
+                        <% if (user.relationship == "Single") { %>
+                            <div>
+                                <input type="radio" id="radio_3" name="relationship" checked />
+                                <label for="radio_3" class="radio"><span>Single</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="radio_4" name="relationship" />
+                                <label for="radio_4" class="radio"><span>In Relationship</span></label>
+                            </div>
+
+                            <% } else if (user.relationship == "In Relationship") { %>
+                                <div>
+                                    <input type="radio" id="radio_3" name="relationship" />
+                                    <label for="radio_3" class="radio"><span>Single</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio_4" name="relationship" checked />
+                                    <label for="radio_4" class="radio"><span>In Relationship</span></label>
+                                </div>
+
+                            <% } else { %>
+                                <div>
+                                    <input type="radio" id="radio_3" name="relationship" />
+                                    <label for="radio_3" class="radio"><span>Single</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio_4" name="relationship" />
+                                    <label for="radio_4" class="radio"><span>In Relationship</span></label>
+                                </div>
+
+                        <% } %>
+
+                        
+
+                    </div>
+
+                    <div class="question">
+                        <label>Privacy</label>
+                        <% if (user.privacy == "Public") { %>
+                            <div>
+                                <input type="radio" id="radio_5" name="privacy" checked />
+                                <label for="radio_5" class="radio"><span>Public</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="radio_6" name="privacy"/>
+                                <label for="radio_6" class="radio"><span>Private</span></label>
+                            </div>
+                        <% } else if (user.privacy == "Private") { %>
+                            <div>
+                                <input type="radio" id="radio_5" name="privacy" />
+                                <label for="radio_5" class="radio"><span>Public</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="radio_6" name="privacy" checked />
+                                <label for="radio_6" class="radio"><span>Private</span></label>
+                            </div>
+                        <% } %>
+                        
+                         
+                        
+                    </div>
+
+
+                </div>
+                <div class="btn-block">
+                    <!-- LINK HREF 8 -->
+                    <button type="button" id="edit-profile-button" >SAVE CHANGES</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/profil-edit.js"></script>
+    <script src="/js/load-profile-data.js"></script>
+    <script src="/js/search-redirect.js"></script>
+</body>
+
+</html>

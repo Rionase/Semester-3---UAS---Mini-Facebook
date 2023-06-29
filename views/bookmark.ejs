@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav>
+
+        <div class="left">
+
+            <div class="logo">
+                <img src="image/fb.jpg">
+            </div>
+
+            <div class="search_bar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+
+            </div>
+
+        </div>
+
+        <div class="center">
+            <a href="/posts">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+
+        <div class="right">
+            <a href="/user/logout">
+                <button class="logout">Log Out</button>
+            </a>
+        </div>
+
+    </nav>
+
+
+
+
+    <!------------main--------------->
+
+    <div class="main">
+
+        <!------------------left------------------->
+
+        <div class="left">
+            <a href="/profile/userprofile/<%= user.username %>">
+                <div class="img">
+                    <img src="<%= user.profile %>">
+                    <p><%= user.username %></p>
+                </div>
+            </a>
+            <a href="/friends/contact">
+                <div class="img">
+                    <img src="/image/friend.png">
+                    <p>Contacts</p>
+                </div>
+            </a>
+            <a href="/friends/addfriends">
+                <div class="img">
+                    <img src="/image/AddFriend.png">
+                    <p>Add Friends</p>
+                </div>
+            </a>
+            <a href="/bookmarks">
+                <div class="img on">
+                    <img src="/image/saved.png">
+                    <p>Saved</p>
+                </div>
+            </a>
+            <a href="/posts/upload">
+                <div class="img">
+                    <img src="/image/upload.png">
+                    <p>Upload</p>
+                </div>
+            </a>
+        </div>
+
+        <!------------center---------------------->
+
+        <div class="center">
+            
+            <div id="main-content">
+
+
+                
+                <!-- <div class="friends_post">
+
+                    <div class="friend_post_top">
+    
+                        <div class="img_and_name">
+    
+                            <img src="image/post_1.jpg">
+    
+                            <div class="friends_name">
+                                <p class="friends_name">
+                                    Senuda De Silva
+                                </p>
+                                <p class="time">16h.<i class="fa-solid fa-user-group"></i></p>
+                            </div>
+                            
+    
+                        </div>
+
+                        <div class="menu">
+
+                            <i class="fa-solid fa-bookmark"></i>
+                            
+
+                        </div>
+    
+                    </div>
+    
+                    <img src="image/post_1.jpg">
+    
+                    <div class="info">
+    
+                        <div class="emoji_img">
+                            <img src="image/like.png">
+                            <img src="image/haha.png">
+                            <img src="image/heart.png">
+                            <p>25k people like your post</p>
+                        </div>
+    
+                        <div class="comment">
+                            
+                            <i class="fa-solid fa-thumbs-up activi like-button"></i>
+                            <p>Like</p>
+                            
+                        </div>
+    
+                    </div>
+    
+                    <hr>
+
+                    <div class="comment_warpper">
+                        <div class="comment_search">
+                            <div>tulisan deskripsi</div>
+                        </div>
+    
+                    </div>
+    
+    
+                </div> -->
+
+                
+
+            </div>
+
+            <input type="hidden" id="lazy-loading-id" value=0>
+            <div class="loard" id="last-button">
+                <button id="load-more-button">Load More</button>
+            </div>
+
+            <p class="end">Design By<span><i class="fa-regular fa-face-grin"></i>
+            Tim Twelve Eyes</span></p>
+
+
+        </div>
+
+        <!------------------right------------------>
+
+        <div class="right">
+
+            <div class="third_warpper" id="left-friend-list">
+
+                <div class="contact_tag">
+                    <h2>Contacts</h2>
+                </div>
+
+                <!-- <div class="contact">
+                    <img src="image/contact_1.jpg">
+                    <p>Senuda De Silva</p>
+                </div>  -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/bookmark.js"></script>
+    <script src="/js/search-redirect.js"></script>
+    
+</body>
+</html>

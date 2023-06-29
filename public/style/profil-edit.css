@@ -1,0 +1,178 @@
+.main1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+    /* background: #f5f5f5; */
+}
+
+#block {
+    background-image: linear-gradient(rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(223, 228, 231), rgb(152, 152, 152), rgb(126, 126, 126));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 1100px;
+    height: 150px;
+}
+
+#block2 {
+    display: flex;
+}
+
+#block2 .edit {
+    transition: .5s ease;
+    margin-top: -110px;
+    margin-left: 120px;
+    opacity: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+#block2 #profil_image {
+    opacity: 1;
+    display: block;
+    margin-top: -70px;
+    width: 230px;
+    height: 230px;
+    border-radius: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    cursor: pointer;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+#block2 .profil:hover .edit {
+    opacity: 1;
+}
+
+#block2 .profil:hover #profil_image {
+    opacity: 0.5;
+}
+
+
+#block2 .block2_1 {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 240px;
+}
+
+#block2 .block2_1 img {
+    border: 2px white solid;
+    margin-top: 10px;
+    margin-left: -10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+
+#block2 #edit img {
+    height: 16px;
+    cursor: pointer;
+}
+
+#block2 #edit label {
+    margin-left: 1px;
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#block2 #edit #box-edit-profile {
+    border-radius: 7px;
+    padding: 8px 14px 8px 14px;
+    cursor: pointer;
+    background-color: #E4E6EB;
+}
+
+#block2 #edit #box-edit-profile:hover {
+    background-color: #D8DADF;
+}
+
+#block2 #edit {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    margin: auto 0px 35px 300px;
+    width: 200px;
+}
+
+
+
+
+
+
+.block3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px gray solid;
+    width: 1000px;
+}
+
+.block3 a:link,
+a:visited {
+    background-color: white;
+    color: black;
+    ;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.block3 a:hover,
+a:active {
+    background-color: rgb(219, 219, 219);
+}
+
+.block3 .on {
+    background-color: rgb(219, 219, 219);
+}
+
+#main {
+    background-color: #e3e3e3;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#main #form {
+    border: 1px red solid;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#input_gambar {
+    display: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+
+
+
+/* SWITCH PRIVACY BUTTON */
+
